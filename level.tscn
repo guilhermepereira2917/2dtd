@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cwponenghr6st" path="res://art/maps/map1.png" id="1_rploh"]
 [ext_resource type="Script" path="res://level.gd" id="1_xnf1o"]
-[ext_resource type="PackedScene" uid="uid://bmw8wa3omkqkp" path="res://scenes/enemy.tscn" id="2_db6oi"]
-[ext_resource type="PackedScene" uid="uid://cd1kongjd0sph" path="res://scenes/enemy_spawner.tscn" id="3_ektpu"]
+[ext_resource type="PackedScene" path="res://scenes/enemy_spawner.tscn" id="2_db6oi"]
+[ext_resource type="PackedScene" path="res://scenes/enemy_spawner.tscn" id="3_ektpu"]
 
 [sub_resource type="Curve2D" id="Curve2D_ctjji"]
 _data = {

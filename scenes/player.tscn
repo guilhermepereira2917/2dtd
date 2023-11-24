@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://yop6rl6m3moe"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_1k3x8"]
+[ext_resource type="Texture2D" uid="uid://c0m3dspcfy1i" path="res://art/sprites/player/player_sprite_2.png" id="2_ksfrp"]
+[ext_resource type="Texture2D" uid="uid://ihvb3kqx27h5" path="res://art/sprites/player/player_sprite_1.png" id="3_i3a8f"]
+[ext_resource type="Texture2D" uid="uid://by1nf3npkic6l" path="res://art/sprites/player/player_sprite_3.png" id="4_vtmon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5salt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ksfrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i3a8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vtmon")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_1k3x8")
+
+[node name="AnimatedPlayerSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_5salt")
