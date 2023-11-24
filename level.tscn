@@ -1,11 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://gysi5yu801qs"]
+[gd_scene load_steps=6 format=3 uid="uid://gysi5yu801qs"]
 
 [ext_resource type="Texture2D" uid="uid://cwponenghr6st" path="res://art/maps/map1.png" id="1_rploh"]
+[ext_resource type="Script" path="res://level.gd" id="1_xnf1o"]
+[ext_resource type="PackedScene" uid="uid://bmw8wa3omkqkp" path="res://scenes/enemy.tscn" id="2_db6oi"]
+[ext_resource type="PackedScene" uid="uid://cd1kongjd0sph" path="res://scenes/enemy_spawner.tscn" id="3_ektpu"]
+
+[sub_resource type="Curve2D" id="Curve2D_ctjji"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 252, 0, 0, 0, 0, 468, 252, 0, 0, 0, 0, 468, 72, 0, 0, 0, 0, 288, 72, 0, 0, 0, 0, 288, 576, 0, 0, 0, 0, 108, 576, 0, 0, 0, 0, 108, 396, 0, 0, 0, 0, 756, 396, 0, 0, 0, 0, 756, 144, 0, 0, 0, 0, 1044, 144, 0, 0, 0, 0, 1048, 648)
+}
+point_count = 11
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_xnf1o")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_rploh")
+
+[node name="LevelPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ctjji")
+
+[node name="EnemySpawner" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_ektpu")]
+path = NodePath("../LevelPath")
+enemy = ExtResource("2_db6oi")
+cooldown = 0.3
+enemies_to_spawn = 15
