@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cwponenghr6st" path="res://art/maps/map1.png" id="1_rploh"]
 [ext_resource type="Script" path="res://level.gd" id="1_xnf1o"]
-[ext_resource type="PackedScene" path="res://scenes/enemy_spawner.tscn" id="2_db6oi"]
-[ext_resource type="PackedScene" path="res://scenes/enemy_spawner.tscn" id="3_ektpu"]
+[ext_resource type="PackedScene" uid="uid://cd1kongjd0sph" path="res://scenes/enemy_spawner.tscn" id="2_db6oi"]
+[ext_resource type="PackedScene" uid="uid://bmw8wa3omkqkp" path="res://scenes/enemy.tscn" id="4_k8vor"]
 
 [sub_resource type="Curve2D" id="Curve2D_ctjji"]
 _data = {
@@ -23,8 +23,8 @@ texture = ExtResource("1_rploh")
 [node name="LevelPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ctjji")
 
-[node name="EnemySpawner" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_ektpu")]
+[node name="EnemySpawner" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_db6oi")]
 path = NodePath("../LevelPath")
-enemy = ExtResource("2_db6oi")
+enemy = ExtResource("4_k8vor")
 cooldown = 0.3
 enemies_to_spawn = 15
