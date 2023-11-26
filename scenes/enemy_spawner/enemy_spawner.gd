@@ -24,7 +24,8 @@ func spawn_enemy() -> void:
 	path_follow.rotates = false
 	path_follow.loop = false
 	
-	var enemy_instantiated = enemy.instantiate()
+	var enemy_instantiated: Enemy = enemy.instantiate()
+	enemy_instantiated.path_follow = path_follow
 	
 	path_follow.add_child(enemy_instantiated)
 	path.add_child(path_follow)

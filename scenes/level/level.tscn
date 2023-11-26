@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://gysi5yu801qs"]
+[gd_scene load_steps=5 format=3 uid="uid://gysi5yu801qs"]
 
 [ext_resource type="Texture2D" uid="uid://cwponenghr6st" path="res://art/maps/map1.png" id="1_rploh"]
-[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_xnf1o"]
 [ext_resource type="PackedScene" uid="uid://cd1kongjd0sph" path="res://scenes/enemy_spawner/enemy_spawner.tscn" id="2_db6oi"]
 [ext_resource type="PackedScene" uid="uid://bmw8wa3omkqkp" path="res://scenes/enemy/enemy.tscn" id="4_buwoa"]
 
@@ -12,7 +11,6 @@ _data = {
 point_count = 11
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_xnf1o")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

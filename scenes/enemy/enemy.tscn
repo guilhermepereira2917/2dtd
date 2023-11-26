@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bmw8wa3omkqkp"]
+[gd_scene load_steps=2 format=3 uid="uid://bmw8wa3omkqkp"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_3kgdu"]
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("1_3kgdu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
