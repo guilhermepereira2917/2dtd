@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnvekcllob04l"
-path="res://.godot/imported/slime-2.png-7f07bd21bfc7fbcc9d3c5da145c4054e.ctex"
+uid="uid://cwponenghr6st"
+path="res://.godot/imported/map_1.png-43cb4937a8b381517950174ac56df102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/enemies/slime/slime-2.png"
-dest_files=["res://.godot/imported/slime-2.png-7f07bd21bfc7fbcc9d3c5da145c4054e.ctex"]
+source_file="res://assets/maps/map_1.png"
+dest_files=["res://.godot/imported/map_1.png-43cb4937a8b381517950174ac56df102.ctex"]
 
 [params]
 

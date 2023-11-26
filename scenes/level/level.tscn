@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://gysi5yu801qs"]
+[gd_scene load_steps=5 format=3 uid="uid://ddo57lu61vlxj"]
 
-[ext_resource type="Texture2D" uid="uid://cwponenghr6st" path="res://art/maps/map1.png" id="1_rploh"]
+[ext_resource type="Texture2D" uid="uid://cwponenghr6st" path="res://assets/maps/map_1.png" id="1_028y7"]
 [ext_resource type="PackedScene" uid="uid://cd1kongjd0sph" path="res://scenes/enemy_spawner/enemy_spawner.tscn" id="2_db6oi"]
 [ext_resource type="PackedScene" uid="uid://bmw8wa3omkqkp" path="res://scenes/enemy/enemy.tscn" id="4_buwoa"]
 
@@ -16,7 +16,7 @@ point_count = 11
 texture_filter = 1
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_rploh")
+texture = ExtResource("1_028y7")
 
 [node name="LevelPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ctjji")
