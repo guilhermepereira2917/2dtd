@@ -7,6 +7,9 @@ signal reached_end
 var path_follow: PathFollow2D
 var velocity: int = 300;
 
+func _ready() -> void:
+	$AnimatedSprite2D.play()
+
 func _process(delta: float) -> void:
 	path_follow.progress += velocity * delta;
 	

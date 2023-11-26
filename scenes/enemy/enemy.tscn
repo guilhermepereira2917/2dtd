@@ -1,20 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmw8wa3omkqkp"]
+[gd_scene load_steps=6 format=3 uid="uid://bmw8wa3omkqkp"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_3kgdu"]
+[ext_resource type="Texture2D" uid="uid://bwjytm6kkuvmj" path="res://assets/sprites/enemies/slime/slime_1.png" id="2_4wqsb"]
+[ext_resource type="Texture2D" uid="uid://dnvekcllob04l" path="res://assets/sprites/enemies/slime/slime_2.png" id="3_ybxt7"]
+[ext_resource type="Texture2D" uid="uid://n0slcdax2kcu" path="res://assets/sprites/enemies/slime/slime_3.png" id="4_av7jj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oejtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4wqsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ybxt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_av7jj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_3kgdu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_oejtr")
