@@ -3,6 +3,7 @@ extends Node2D
 class_name Enemy
 
 signal reached_end
+signal died
 
 var path_follow: PathFollow2D
 var velocity: int = 300;
@@ -18,3 +19,7 @@ func _process(delta: float) -> void:
 	
 	reached_end.emit()
 	path_follow.queue_free()
+
+func _on_health_component_health_depleted() -> void:
+	died.emit()
+	queue_free()

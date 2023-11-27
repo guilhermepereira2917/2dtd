@@ -26,6 +26,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_w36wh")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 0)
@@ -35,4 +37,5 @@ shape = SubResource("RectangleShape2D_khfx3")
 position = Vector2(-7.82311e-07, 0)
 scale = Vector2(0.8, 0.2)
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmw8wa3omkqkp"]
+[gd_scene load_steps=8 format=3 uid="uid://bmw8wa3omkqkp"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_3kgdu"]
 [ext_resource type="Texture2D" uid="uid://bwjytm6kkuvmj" path="res://assets/sprites/enemies/slime/slime_1.png" id="2_4wqsb"]
 [ext_resource type="Texture2D" uid="uid://dnvekcllob04l" path="res://assets/sprites/enemies/slime/slime_2.png" id="3_ybxt7"]
 [ext_resource type="Texture2D" uid="uid://n0slcdax2kcu" path="res://assets/sprites/enemies/slime/slime_3.png" id="4_av7jj"]
+[ext_resource type="PackedScene" uid="uid://dusohcgyq3tnr" path="res://scenes/health_component/health_component.tscn" id="5_pr387"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oejtr"]
 animations = [{
@@ -22,6 +23,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jj8mx"]
+radius = 36.0
+
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_3kgdu")
 
@@ -29,3 +33,15 @@ script = ExtResource("1_3kgdu")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_oejtr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jj8mx")
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_pr387")]
+max_health = 3
+
+[connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

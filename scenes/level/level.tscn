@@ -25,4 +25,4 @@ curve = SubResource("Curve2D_ctjji")
 path = NodePath("../LevelPath")
 enemy = ExtResource("4_buwoa")
 cooldown = 0.3
-enemies_to_spawn = 15
+enemies_to_spawn = 5
