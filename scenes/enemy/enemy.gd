@@ -21,5 +21,12 @@ func _process(delta: float) -> void:
 	path_follow.queue_free()
 
 func _on_health_component_health_depleted() -> void:
+	velocity = 0
 	died.emit()
+	
+	await $AnimationPlayer.animation_finished
+	
 	queue_free()
+
+func _on_health_component_damage_taken() -> void:
+	$AnimationPlayer.play("hit")
